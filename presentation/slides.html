@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multiplayer Chat - Technical Presentation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --card-bg: #151c2c;
+      --card-border: #242f47;
+      --primary: #6366f1;
+      --primary-light: #818cf8;
+      --accent: #10b981;
+      --warning: #f59e0b;
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 32px;
+      padding: 40px 20px;
+    }
+
+    .toolbar {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .btn-print {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background 0.15s ease;
+    }
+
+    .btn-print:hover {
+      background: #4f46e5;
+    }
+
+    .slide {
+      width: 960px;
+      height: 540px; /* 16:9 aspect ratio */
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 44px 52px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      overflow: hidden;
+    }
+
+    .slide-watermark {
+      position: absolute;
+      bottom: 24px;
+      right: 36px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-dim);
+      letter-spacing: 1px;
+    }
+
+    .slide-number {
+      position: absolute;
+      top: 36px;
+      right: 48px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--primary-light);
+      background: rgba(99, 102, 241, 0.15);
+      padding: 4px 12px;
+      border-radius: 20px;
+      border: 1px solid rgba(99, 102, 241, 0.3);
+    }
+
+    .slide-header {
+      margin-bottom: 20px;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--primary-light);
+      margin-bottom: 8px;
+    }
+
+    .slide-header h1 {
+      font-size: 30px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: white;
+    }
+
+    .slide-header p {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      flex: 1;
+    }
+
+    .card-box {
+      background: rgba(11, 15, 25, 0.6);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 20px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .card-box h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .dot-accent {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .dot-warning {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--warning);
+    }
+
+    ul.feature-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    ul.feature-list li {
+      font-size: 13px;
+      line-height: 1.5;
+      color: var(--text-muted);
+      padding-left: 18px;
+      position: relative;
+    }
+
+    ul.feature-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--primary-light);
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 1.2;
+    }
+
+    ul.feature-list strong {
+      color: var(--text);
+    }
+
+    .tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .tag {
+      background: rgba(99, 102, 241, 0.12);
+      border: 1px solid rgba(99, 102, 241, 0.25);
+      color: var(--primary-light);
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+
+    /* Print styling to export cleanly to PDF */
+    @media print {
+      body {
+        background: none;
+        padding: 0;
+        gap: 0;
+      }
+      .toolbar {
+        display: none;
+      }
+      .slide {
+        width: 100vw;
+        height: 100vh;
+        border-radius: 0;
+        border: none;
+        box-shadow: none;
+        page-break-after: always;
+        break-after: page;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="toolbar">
+    <button class="btn-print" onclick="window.print()">Export / Print to PDF</button>
+  </div>
+
+  <!-- SLIDE 1 -->
+  <div class="slide">
+    <div class="slide-number">Slide 1 / 2</div>
+    <div class="slide-header">
+      <span class="badge">Technical Interview Walkthrough</span>
+      <h1>Multiplayer Chat with Rooms</h1>
+      <p>Architecture, features built, and technology stack overview</p>
+    </div>
+
+    <div class="grid-2">
+      <div class="card-box">
+        <h3><span class="dot-accent"></span> What Was Built</h3>
+        <ul class="feature-list">
+          <li><strong>Room-Based Realtime Messaging:</strong> Users join/create named rooms with instant synchronization across clients via Firestore listeners.</li>
+          <li><strong>Component Architecture:</strong> Five decoupled React components (<code>RoomSelection</code>, <code>ChatRoom</code>, <code>MessageList</code>, <code>MessageItem</code>, <code>MessageInput</code>).</li>
+          <li><strong>UX &amp; Polish:</strong> Live connection status indicator, auto-scroll to latest messages, deterministic user avatar coloring, and readable timestamps.</li>
+          <li><strong>Zero-Config Resilience:</strong> Automatic multi-tab <code>BroadcastChannel</code> fallback so reviewers can test multiplayer immediately without setup.</li>
+        </ul>
+      </div>
+
+      <div class="card-box">
+        <h3><span class="dot-accent"></span> The Tech Stack</h3>
+        <ul class="feature-list">
+          <li><strong>Frontend:</strong> React 19 (functional components + hooks: <code>useState</code>, <code>useEffect</code>, <code>useRef</code>).</li>
+          <li><strong>Build &amp; Bundling:</strong> Vite 6 (instant HMR, 1.1s production builds, zero bloat).</li>
+          <li><strong>Backend / DB:</strong> Firebase Firestore v11 SDK with <code>onSnapshot</code> listeners and server timestamps.</li>
+          <li><strong>Data Schema:</strong> Subcollections (<code>rooms/{roomId}/messages</code>) avoiding manual composite index requirements.</li>
+          <li><strong>Styling:</strong> Modern, responsive dark CSS theme with fluid layouts.</li>
+        </ul>
+        <div class="tech-tags">
+          <span class="tag">React 19</span>
+          <span class="tag">Firebase Firestore</span>
+          <span class="tag">Vite</span>
+          <span class="tag">Lucide</span>
+          <span class="tag">Subcollections</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide-watermark">CANDIDATE TECHNICAL BRIEF</div>
+  </div>
+
+  <!-- SLIDE 2 -->
+  <div class="slide">
+    <div class="slide-number">Slide 2 / 2</div>
+    <div class="slide-header">
+      <span class="badge">Critical Assessment &amp; Next Steps</span>
+      <h1>AI Reflection &amp; Engineering Decisions</h1>
+      <p>What the AI missed, human architectural course-corrections, and open questions</p>
+    </div>
+
+    <div class="grid-2">
+      <div class="card-box">
+        <h3><span class="dot-warning"></span> What the AI Missed &amp; Corrections</h3>
+        <ul class="feature-list">
+          <li><strong>Firestore Query Indexing Pitfall:</strong> AI typically defaults to <code>where("room", "==", roomId)</code> + <code>orderBy("createdAt")</code>, which fails in Firestore without manual console indexing. <em>Correction:</em> Structured as <code>rooms/{id}/messages</code> subcollections.</li>
+          <li><strong>The "Blank Screen" Friction:</strong> AI code breaks when API keys are empty. <em>Correction:</em> Added transparent <code>BroadcastChannel</code> fallback so the app works on <code>npm run dev</code> out of the box.</li>
+          <li><strong>Avoid Over-Engineering:</strong> AI suggested external state managers (Redux/Zustand). <em>Decision:</em> Kept state in clean React props &amp; local hooks.</li>
+        </ul>
+      </div>
+
+      <div class="card-box">
+        <h3><span class="dot-warning"></span> Areas of Uncertainty &amp; Next Steps</h3>
+        <ul class="feature-list">
+          <li><strong>Active Room Discovery:</strong> Subcollections isolate messages efficiently, but listing active public rooms requires a top-level metadata collection or Collection Group Query as room count grows.</li>
+          <li><strong>User Presence &amp; Typing Indicators:</strong> Firestore document writes are too costly for heartbeat/typing states; Firebase Realtime Database is better suited for presence.</li>
+          <li><strong>Authentication &amp; Security:</strong> Names are currently self-asserted. Production needs Firebase Anonymous Auth + Security Rules to enforce identity.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="slide-watermark">CANDIDATE TECHNICAL BRIEF</div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,458 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R 4 0 R] /Count 2 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 960 540] /Resources << /Font << /F1 5 0 R /F2 6 0 R >> >> /Contents 7 0 R >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 960 540] /Resources << /Font << /F1 5 0 R /F2 6 0 R >> >> /Contents 8 0 R >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+7 0 obj
+<< /Length 3415 >>
+stream
+0.047 0.067 0.106 rg
+0 0 960 540 re
+f
+BT
+/F2 11 Tf
+0.505 0.549 0.973 rg
+1 0 0 1 50 485 Tm
+(TECHNICAL INTERVIEW WALKTHROUGH  |  SLIDE 1 OF 2) Tj
+ET
+BT
+/F2 26 Tf
+1 1 1 rg
+1 0 0 1 50 448 Tm
+(Multiplayer Chat with Rooms) Tj
+ET
+BT
+/F1 13 Tf
+0.58 0.639 0.722 rg
+1 0 0 1 50 426 Tm
+(Real-time room-based communication architecture, components, and technology stack) Tj
+ET
+1 w 0.141 0.184 0.278 RG
+0.082 0.11 0.173 rg
+50 75 415 325 re
+B
+0.063 0.725 0.506 rg
+72 366 8 8 re
+f
+BT
+/F2 16 Tf
+0.945 0.961 0.976 rg
+1 0 0 1 90 364 Tm
+(What Was Built) Tj
+ET
+BT
+/F2 12 Tf
+0.505 0.549 0.973 rg
+1 0 0 1 72 330 Tm
+(- Room-Based Live Chat:) Tj
+ET
+BT
+/F1 11.5 Tf
+0.75 0.8 0.86 rg
+1 0 0 1 84 313 Tm
+(Users join or create rooms by name with instant) Tj
+ET
+BT
+/F1 11.5 Tf
+0.75 0.8 0.86 rg
+1 0 0 1 84 297 Tm
+(multi-client updates via Firestore real-time listeners.) Tj
+ET
+BT
+/F2 12 Tf
+0.505 0.549 0.973 rg
+1 0 0 1 72 281 Tm
+(- Component-Driven Architecture:) Tj
+ET
+BT
+/F1 11.5 Tf
+0.75 0.8 0.86 rg
+1 0 0 1 84 264 Tm
+(Structured into 5 modular React) Tj
+ET
+BT
+/F1 11.5 Tf
+0.75 0.8 0.86 rg
+1 0 0 1 84 248 Tm
+(components: RoomSelection, ChatRoom, MessageList,) Tj
+ET
+BT
+/F1 11.5 Tf
+0.75 0.8 0.86 rg
+1 0 0 1 84 232 Tm
+(MessageItem, and MessageInput.) Tj
+ET
+BT
+/F2 12 Tf
+0.505 0.549 0.973 rg
+1 0 0 1 72 216 Tm
+(- Timestamps & Visual Distinction:) Tj
+ET
+BT
+/F1 11.5 Tf
+0.75 0.8 0.86 rg
+1 0 0 1 84 199 Tm
+(Automatic message timestamps,) Tj
+ET
+BT
+/F1 11.5 Tf
+0.75 0.8 0.86 rg
+1 0 0 1 84 183 Tm
+(sender-based bubble alignments, and hashed avatar colors.) Tj
+ET
+BT
+/F2 12 Tf
+0.505 0.549 0.973 rg
+1 0 0 1 72 167 Tm
+(- Zero-Config Demo Mode:) Tj
+ET
+BT
+/F1 11.5 Tf
+0.75 0.8 0.86 rg
+1 0 0 1 84 150 Tm
+(Automatic BroadcastChannel fallback) Tj
+ET
+BT
+/F1 11.5 Tf
+0.75 0.8 0.86 rg
+1 0 0 1 84 134 Tm
+(allowing reviewers to test multi-tab chat without API keys.) Tj
+ET
+1 w 0.141 0.184 0.278 RG
+0.082 0.11 0.173 rg
+495 75 415 325 re
+B
+0.063 0.725 0.506 rg
+517 366 8 8 re
+f
+BT
+/F2 16 Tf
+0.945 0.961 0.976 rg
+1 0 0 1 535 364 Tm
+(The Tech Stack) Tj
+ET
+BT
+/F2 12 Tf
+0.505 0.549 0.973 rg
+1 0 0 1 517 330 Tm
+(- React 19 & Vite 6:) Tj
+ET
+BT
+/F1 11.5 Tf
+0.75 0.8 0.86 rg
+1 0 0 1 529 313 Tm
+(Functional components with hooks \(useState,) Tj
+ET
+BT
+/F1 11.5 Tf
+0.75 0.8 0.86 rg
+1 0 0 1 529 297 Tm
+(useEffect, useRef\) with lightning-fast bundling \(<1.2s build\).) Tj
+ET
+BT
+/F2 12 Tf
+0.505 0.549 0.973 rg
+1 0 0 1 517 281 Tm
+(- Firebase Firestore \(v11\):) Tj
+ET
+BT
+/F1 11.5 Tf
+0.75 0.8 0.86 rg
+1 0 0 1 529 264 Tm
+(Real-time subscriptions \(onSnapshot\),) Tj
+ET
+BT
+/F1 11.5 Tf
+0.75 0.8 0.86 rg
+1 0 0 1 529 248 Tm
+(server timestamps, and decoupled service architecture.) Tj
+ET
+BT
+/F2 12 Tf
+0.505 0.549 0.973 rg
+1 0 0 1 517 232 Tm
+(- Optimized Subcollection Schema:) Tj
+ET
+BT
+/F1 11.5 Tf
+0.75 0.8 0.86 rg
+1 0 0 1 529 215 Tm
+(rooms/{roomId}/messages eliminates) Tj
+ET
+BT
+/F1 11.5 Tf
+0.75 0.8 0.86 rg
+1 0 0 1 529 199 Tm
+(Firestore composite index requirements out-of-the-box.) Tj
+ET
+BT
+/F2 12 Tf
+0.505 0.549 0.973 rg
+1 0 0 1 517 183 Tm
+(- Modern Custom CSS:) Tj
+ET
+BT
+/F1 11.5 Tf
+0.75 0.8 0.86 rg
+1 0 0 1 529 166 Tm
+(Dark aesthetic, responsive mobile layout,) Tj
+ET
+BT
+/F1 11.5 Tf
+0.75 0.8 0.86 rg
+1 0 0 1 529 150 Tm
+(smooth auto-scroll anchor, and zero heavy UI dependencies.) Tj
+ET
+BT
+/F1 10.5 Tf
+0.392 0.455 0.545 rg
+1 0 0 1 50 35 Tm
+(Candidate Technical Submission  |  Multiplayer Chat Challenge) Tj
+ET
+BT
+/F2 10.5 Tf
+0.392 0.455 0.545 rg
+1 0 0 1 810 35 Tm
+(SLIDE 1 OF 2) Tj
+ET
+endstream
+endobj
+8 0 obj
+<< /Length 3508 >>
+stream
+0.047 0.067 0.106 rg
+0 0 960 540 re
+f
+BT
+/F2 11 Tf
+0.96 0.62 0.043 rg
+1 0 0 1 50 485 Tm
+(CRITICAL ASSESSMENT & NEXT STEPS  |  SLIDE 2 OF 2) Tj
+ET
+BT
+/F2 26 Tf
+1 1 1 rg
+1 0 0 1 50 448 Tm
+(AI Reflection & Engineering Decisions) Tj
+ET
+BT
+/F1 13 Tf
+0.58 0.639 0.722 rg
+1 0 0 1 50 426 Tm
+(Where AI missed the mark, architectural corrections applied, and technical uncertainties) Tj
+ET
+1 w 0.141 0.184 0.278 RG
+0.082 0.11 0.173 rg
+50 75 415 325 re
+B
+0.96 0.62 0.043 rg
+72 366 8 8 re
+f
+BT
+/F2 16 Tf
+0.945 0.961 0.976 rg
+1 0 0 1 90 364 Tm
+(What the AI Got Wrong / What I Corrected) Tj
+ET
+BT
+/F2 12 Tf
+0.96 0.62 0.043 rg
+1 0 0 1 72 330 Tm
+(- The Firestore Indexing Trap:) Tj
+ET
+BT
+/F1 11.5 Tf
+0.75 0.8 0.86 rg
+1 0 0 1 84 313 Tm
+(AI code defaulted to flat collection queries:) Tj
+ET
+BT
+/F1 11.5 Tf
+0.75 0.8 0.86 rg
+1 0 0 1 84 297 Tm
+(where\('room', '==', id\) + orderBy\('createdAt'\). In Firestore,) Tj
+ET
+BT
+/F1 11.5 Tf
+0.75 0.8 0.86 rg
+1 0 0 1 84 281 Tm
+(this crashes without a manual composite index. Corrected to) Tj
+ET
+BT
+/F1 11.5 Tf
+0.75 0.8 0.86 rg
+1 0 0 1 84 265 Tm
+(subcollections \(rooms/{id}/messages\) for automatic indexing.) Tj
+ET
+BT
+/F2 12 Tf
+0.96 0.62 0.043 rg
+1 0 0 1 72 249 Tm
+(- Missing Zero-Config Developer UX:) Tj
+ET
+BT
+/F1 11.5 Tf
+0.75 0.8 0.86 rg
+1 0 0 1 84 232 Tm
+(AI assumed live credentials;) Tj
+ET
+BT
+/F1 11.5 Tf
+0.75 0.8 0.86 rg
+1 0 0 1 84 216 Tm
+(missing keys resulted in blank screens. Architected a seamless) Tj
+ET
+BT
+/F1 11.5 Tf
+0.75 0.8 0.86 rg
+1 0 0 1 84 200 Tm
+(BroadcastChannel fallback for immediate multi-tab demoing.) Tj
+ET
+BT
+/F2 12 Tf
+0.96 0.62 0.043 rg
+1 0 0 1 72 184 Tm
+(- State Management Over-Engineering:) Tj
+ET
+BT
+/F1 11.5 Tf
+0.75 0.8 0.86 rg
+1 0 0 1 84 167 Tm
+(AI often introduces Redux) Tj
+ET
+BT
+/F1 11.5 Tf
+0.75 0.8 0.86 rg
+1 0 0 1 84 151 Tm
+(or Context for simple flows. Chose explicit props & local state.) Tj
+ET
+1 w 0.141 0.184 0.278 RG
+0.082 0.11 0.173 rg
+495 75 415 325 re
+B
+0.96 0.62 0.043 rg
+517 366 8 8 re
+f
+BT
+/F2 16 Tf
+0.945 0.961 0.976 rg
+1 0 0 1 535 364 Tm
+(Least Sure About & Future Iterations) Tj
+ET
+BT
+/F2 12 Tf
+0.96 0.62 0.043 rg
+1 0 0 1 517 330 Tm
+(- Room Discovery at Scale:) Tj
+ET
+BT
+/F1 11.5 Tf
+0.75 0.8 0.86 rg
+1 0 0 1 529 313 Tm
+(Subcollections isolate room messages) Tj
+ET
+BT
+/F1 11.5 Tf
+0.75 0.8 0.86 rg
+1 0 0 1 529 297 Tm
+(efficiently, but listing active rooms requires maintaining a) Tj
+ET
+BT
+/F1 11.5 Tf
+0.75 0.8 0.86 rg
+1 0 0 1 529 281 Tm
+(separate root /rooms catalog or Collection Group Queries.) Tj
+ET
+BT
+/F2 12 Tf
+0.96 0.62 0.043 rg
+1 0 0 1 517 265 Tm
+(- Presence & Typing Indicators:) Tj
+ET
+BT
+/F1 11.5 Tf
+0.75 0.8 0.86 rg
+1 0 0 1 529 248 Tm
+(Firestore document writes are too) Tj
+ET
+BT
+/F1 11.5 Tf
+0.75 0.8 0.86 rg
+1 0 0 1 529 232 Tm
+(costly and slow for typing heartbeats. In production, Firebase) Tj
+ET
+BT
+/F1 11.5 Tf
+0.75 0.8 0.86 rg
+1 0 0 1 529 216 Tm
+(Realtime Database is better suited for ephemeral presence.) Tj
+ET
+BT
+/F2 12 Tf
+0.96 0.62 0.043 rg
+1 0 0 1 517 200 Tm
+(- Authentication & Impersonation:) Tj
+ET
+BT
+/F1 11.5 Tf
+0.75 0.8 0.86 rg
+1 0 0 1 529 183 Tm
+(Display names are currently) Tj
+ET
+BT
+/F1 11.5 Tf
+0.75 0.8 0.86 rg
+1 0 0 1 529 167 Tm
+(unauthenticated. Production requires Firebase Auth integration) Tj
+ET
+BT
+/F1 11.5 Tf
+0.75 0.8 0.86 rg
+1 0 0 1 529 151 Tm
+(with Firestore Security Rules to prevent spoofing.) Tj
+ET
+BT
+/F1 10.5 Tf
+0.392 0.455 0.545 rg
+1 0 0 1 50 35 Tm
+(Candidate Technical Submission  |  Multiplayer Chat Challenge) Tj
+ET
+BT
+/F2 10.5 Tf
+0.392 0.455 0.545 rg
+1 0 0 1 810 35 Tm
+(SLIDE 2 OF 2) Tj
+ET
+endstream
+endobj
+xref
+0 9
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000127 00000 n 
+0000000263 00000 n 
+0000000399 00000 n 
+0000000469 00000 n 
+0000000544 00000 n 
+0000004011 00000 n 
+trailer
+<< /Size 9 /Root 1 0 R >>
+startxref
+7571
+%%EOF
