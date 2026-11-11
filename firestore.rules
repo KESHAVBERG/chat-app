@@ -1,0 +1,14 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Chat room messages
+    match /rooms/{roomId}/messages/{messageId} {
+      // Allow read and create for open chat rooms
+      // (In a production auth setup, you would check request.auth != null)
+      allow read, create: if request.resource.data.text is string
+                          && request.resource.data.text.size() > 0
+                          && request.resource.data.text.size() <= 500
+                          && request.resource.data.user is string;
+    }
+  }
+}
