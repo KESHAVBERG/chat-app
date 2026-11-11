@@ -47,3 +47,6 @@ dist-ssr
 .env
 .env.local
 .env.*.local
+
+# Git bundles
+*.bundle
